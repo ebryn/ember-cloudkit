@@ -1,19 +1,19 @@
 import Ember from 'ember';
-import * as cloudkit from 'ember-cloudkit';
+import CloudKit from 'ember-cloudkit';
 
 export default Ember.Controller.extend({
   ckContainer: Ember.computed(function() {
-    return cloudkit.getDefaultContainer();
+    return CloudKit.getDefaultContainer();
   }),
 
   database: Ember.computed(function() {
-    return cloudkit.publicDatabase();
+    return this.get('ckContainer').publicCloudDatabase;
   }),
 
   records: Ember.computed(function() {
     let response = Ember.ObjectProxy.create({ content: {} });
 
-    cloudkit.publicDatabase().performQuery({recordType: "Items"}).then(req => {
+    this.get('database').performQuery({recordType: "Items"}).then(req => {
       response.set('records', Ember.A(req.records));
     });
 

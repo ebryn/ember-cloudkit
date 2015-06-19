@@ -33,3 +33,9 @@ ENV.cloudkit = {
   }]
 };
 ```
+
+## Usage
+
+As a convienience, `ember-cloudkit` provides an ES6 module shim for the `CloudKit` global:
+
+`import CloudKit from "ember-cloudkit"`
