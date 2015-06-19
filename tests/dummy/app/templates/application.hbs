@@ -1,3 +1,12 @@
 <h2 id="title">Welcome to Ember.js</h2>
 
-{{outlet}}
+{{log ckContainer}}
+
+{{#each records.records as |rec|}}
+  {{log rec}}
+  <li>
+    {{#each-in rec.fields as |key val|}}
+      {{key}}: {{val.value}}
+    {{/each-in}}
+  </li>
+{{/each}}

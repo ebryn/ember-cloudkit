@@ -19,6 +19,23 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.cloudkit = {
+    containers: [{
+
+      // Change this to a container identifier you own.
+      containerIdentifier: 'iCloud.com.erikbryn.test',
+
+      // And generate an API token through CloudKit Dashboard.
+      apiToken: 'f45c0e8c6dfe6afca33aae344750120d2fa666a284c11a27610e726bb8d6456a',
+
+      auth: {
+        buttonSize: 'medium',
+        persist: true // Sets a cookie.
+      },
+      environment: 'development'
+    }]
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
