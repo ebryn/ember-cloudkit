@@ -6,7 +6,7 @@ module.exports = {
 
   contentFor: function(type) {
     if (type === 'head') {
-      return '<script src="https://cdn.apple-cloudkit.com/ck/1/cloudkit.js"></script>';
+      return '<script src="https://cdn.apple-cloudkit.com/ck/2/cloudkit.js"></script>';
     }
     if (type === 'vendor-prefix') {
       var ENV = process.env.EMBER_ENV;
